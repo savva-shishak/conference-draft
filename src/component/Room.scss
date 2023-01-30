@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.flex-center-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.block {
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px black;
+  width: 500px;
+}
+
+.user-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5px;
+  
+  select, input {
+    width: 200px;
+  }
+
+  label {
+    display: grid;
+    gap: 5px;
+    padding: 5px;
+
+  }
+}
+
+.translations {
+  video {
+    display: block;
+    margin-top: 5px;
+    height: 150px;
+  }
+}
