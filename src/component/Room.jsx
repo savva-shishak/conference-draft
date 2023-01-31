@@ -97,8 +97,8 @@ export function Room() {
                 </button>
               )}
           </div>
-          {userVideo && !userVideo.paused && <Video mediaTag="cam-video" />}
-          {userScreen && !userScreen.paused && <Video mediaTag="screen-video" />}
+          {userVideo && <Video mediaTag="cam-video" />}
+          {userScreen && <Video mediaTag="screen-video" />}
         </div>
         <div className="block">
           <div className="flex-center-row">
@@ -367,6 +367,42 @@ export function Room() {
                 )}
               />
             ))}
+          {userVideo && !userVideo.paused && (
+            <Video
+              mediaTag="cam-video"
+              render={(ref, transform) => (
+                <video
+                  ref={ref}
+                  width="100%"
+                  height="300"
+                  autoPlay
+                  style={{
+                    transform,
+                    objectFit: 'contain',
+                    objectPosition: 'center',
+                  }}
+                />
+              )}
+            />
+          )}
+          {userScreen && !userScreen.paused && (
+            <Video
+              mediaTag="screen-video"
+              render={(ref, transform) => (
+                <video
+                  ref={ref}
+                  width="100%"
+                  height="300"
+                  autoPlay
+                  style={{
+                    transform,
+                    objectFit: 'contain',
+                    objectPosition: 'center',
+                  }}
+                />
+              )}
+            />
+          )}
         </div>
       </div>
     </div>
